@@ -26,9 +26,11 @@ def print_header
 end
 
 def print(students)
- students.each do |students|
-   puts "#{students[:name]} (#{students[:cohort]} cohort)"
- end
+  students.each_with_index do |students, index|
+    if students[:name].length <= 12
+      puts "#{index.to_i + 1} #{students[:name]} (#{students[:cohort]} cohort)"
+      end
+    end
 end
  #Finally we print the total,
  def print_footer(students)
